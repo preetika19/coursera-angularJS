@@ -1,0 +1,12 @@
+<div class="row">
+    <div ng-repeat="item in menu.foundItems">
+        <div class="clearfix" ng-if="$index % 2 == 0"></div>
+        <div class="col-md-6">
+            <h2>{{item.name}}</h2>
+            <h3>{{item.short_name}}</h3>
+            <p>{{item.description}}</p>
+            <input type="button" ng-click="menu.onRemove({index: $index})" class="btn btn-primary" value="Remove dish!">
+        </div>
+    </div>
+</div>
+<div class="btn btn-danger" role="alert" ng-show="menu.onEmpty">{{menu.onEmpty}}</div>
