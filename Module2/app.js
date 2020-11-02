@@ -22,6 +22,7 @@
 		var boughtlist = this;
 		boughtlist.items = ShoppingListCheckOffService.getboughtItems();
 	}
+	console.log(buyitems);
 
 	// ShoppingListCheckOffService
 	function ShoppingListCheckOffService() {
