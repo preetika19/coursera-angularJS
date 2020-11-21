@@ -1,45 +1,39 @@
 (function () {
-"use strict";
+    "use strict";
 
-angular.module('common')
-.service('MenuService', MenuService);
+    angular.module('common')
+    .service('MenuService', MenuService);
 
 
-MenuService.$inject = ['$http', '$interpolate', '$q', 'ApiPath'];
-function MenuService($http, $interpolate, $q, ApiPath) {
-  var service = this;
+    MenuService.$inject = ['$http', 'ApiPath'];
+    function MenuService($http, ApiPath) {
+      let service = this;
+      let user = {};
 
-  service.getCategories = function () {
-    return $http.get(ApiPath + '/categories.json').then(function (response) {
-      return response.data;
-    });
-  };
+      service.getCategories = function () {
+        return $http.get(ApiPath + '/categories.json').then(function (response) {
+          return response.data;
+        });
+      };
+      service.getMenuItems = function (category) {
+        var config = {};
+        if (category) {
+          config.params = {'category': category};
+        }
 
-  service.getMenuItems = function (category) {
-    var config = {};
-    if (category) {
-      config.params = {'category': category};
-    }
-
-    return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
-      return response.data;
-    });
-  };
-
-  service.getDish = function (short_name) {
-    var exp = $interpolate('/menu_items/{{short_name}}.json', false, null, true),
-        url = exp({ short_name: short_name});
-
-    return $http
-      .get(ApiPath + url)
-      .then(function (response) {
-        return response.data;
-      })
-      .catch(function(e){
-        return $q.reject(e);
-      });
-  };
-
+        return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
+          return response.data;
+        });
+      };
+      service.getMenuItem = function(shortName) {
+          return $http.get(ApiPath + '/menu_items/' + shortName + '.json');
+      }
+      service.setUser = function(userObj) {
+          user = userObj;
+      }
+      service.getUser = function() {
+          return user;
+      }
 }
 
 

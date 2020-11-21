@@ -5,18 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>David Chu's China Bistro</title>
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/restaurant.css">
     <link rel="stylesheet" href="css/common.css">
-
-    <style>
-      .error {
-        color: red;
-      }
-    </style>
   </head>
   <body ng-app="restaurant" ng-strict-di>
 
@@ -59,11 +52,11 @@
               </li>
               <li>
                 <a ui-sref="public.myinfo">
-                  <span class="glyphicon glyphicon-user"></span><br class="hidden-xs"> My Info</a>
+                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
               </li>
               <li>
                 <a ui-sref="public.signup">
-                  <span class="glyphicon glyphicon-envelope"></span><br class="hidden-xs"> Sign Up</a>
+                  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
               </li>
               <li id="phone" class="hidden-xs">
                 <a href="tel:410-602-5008">
@@ -131,7 +124,6 @@
     <script src="src/common/loading/loading.component.js"></script>
     <script src="src/common/loading/loading.interceptor.js"></script>
     <script src="src/common/menu.service.js"></script>
-    <script src="src/common/storage.service.js"></script>
 
     <!-- Public Module -->
     <script src="src/public/public.module.js"></script>
@@ -140,8 +132,8 @@
     <script src="src/public/menu-category/menu-category.component.js"></script>
     <script src="src/public/menu-items/menu-items.controller.js"></script>
     <script src="src/public/menu-item/menu-item.component.js"></script>
-    <script src="src/public/sign-up/sign-up.controller.js"></script>
-    <script src="src/public/my-info/my-info.controller.js"></script>
+    <script src="src/public/signup/signup.controller.js"></script>
+    <script src="src/public/myinfo/myinfo.controller.js"></script>
 
     <!-- ADMIN SITE -->
 

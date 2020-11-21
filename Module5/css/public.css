@@ -111,6 +111,11 @@ h3.menu-item-title {
   font-size: .9em;
   font-style: italic;
 }
+span.alert-danger span.alert-success {
+    float: right;
+    padding: 0 1% 0 1%;
+    font-weight: bold;
+}
 /* END SINGLE CATEGORY PAGE */
 
 
